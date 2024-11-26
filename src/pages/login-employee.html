@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="style.css">
+        <script src="login-employee.js" defer></script>
+        <title>Iniciar sesion</title>
+    </head>
+    <body>
+        <main>
+            <div class="form-container">
+                <h1>Acceso a empleados</h1>
+                <p>Ingresa tus credenciales junto con tu respectivo token de acceso, <span style="color: rgb(190, 106, 10);">recorda no filtrarlo.</span></p>
+                <form id="login-form">
+                    <div class="login-container">
+                        <div class="form-element">
+                            <label for="user" class="sr-only">User</label>
+                            <input class="input-log" type="text" name="user" id="user" placeholder="Direccion de correo electronico">
+                        </div>
+                        <div class="form-element">
+                            <label for="password" class="sr-only">Password</label>
+                            <input class="input-log" type="password" name="password" id="password" placeholder="Contraseña">
+                        </div>
+                        <div class="form-element">
+                            <label for="tokenaccess" class="sr-only">Token</label>
+                            <input class="input-log" type="password" name="tokenaccess" id="tokenaccess" placeholder="Token de acceso">
+                        </div>
+                    <button class="button-form" type="submit">
+                        Iniciar Sesion
+                    </button>
+                    <p class="error display">Error al inicar sesion</p>
+                    </div>
+                </form>
+                <p>No sos empleado? accede a siguiente <a href="/register">Enlace</a></p>
+            </div>
+        </main>
+    </body>
+</html>

@@ -1,0 +1,22 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/admin">
+      <img src="https://raw.githubusercontent.com/mvvp4/RehabilitaTuSer/refs/heads/main/Resources/icons/logo/12.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+      Administracion de Servicios
+    </a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav" style="margin-left: auto;">
+        <li class="nav-item">
+          <a class="nav-link" href="{{#if (eq section "clients")}}/register{{else}}/admin/new-service{{/if}}">Crear</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/admin/{{#if (eq section "clients")}}clients{{else}}services{{/if}}">Listar</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/admin">Menu</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

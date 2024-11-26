@@ -9,14 +9,22 @@ generator client {
 }
 
 datasource db {
-  provider = "mysql"
-  url      = env("DATABASE_URL")
+  provider          = "mysql"
+  url               = env("DATABASE_URL")
 }
-model servicios{
-  Id Int @id @default(autoincrement())
-  Servicio String @unique @db.VarChar(255)
-  Modalidad String @db.VarChar(255)
-  contenido
-  Cuota Decimal @db.Decimal(50, 2)
-  Disponibilidad String @db.VarChar(255)
+
+model Services {
+  id Int @id @default(autoincrement())
+  name String @unique
+  isactive Boolean @default(false)
+  modality String
+  share Float @default(0.0)
+  introduction String @db.Text
+  content String @db.Text
+
+}
+model Admin {
+  Gmail String @id @unique
+  Password String
+  Token String
 }

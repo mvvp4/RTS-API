@@ -1,0 +1,86 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h3 class="text-uppercase">EDITANDO SERVICIO</h3>
+                </div>
+                <div class="card-body">
+                    <form action="/admin/edit-service/{{servicio.id}}" method="post">
+                        <div class="input-group mt-2">
+                            <label for="name" class="input-group-text">Nombre</label>
+                            <input type="text" class="form-control" id="name" name="name" value="{{servicio.name}}" autofocus required>
+                        </div>
+                        <div class="input-group mt-2">
+                            <label for="isactive" class="input-group-text">Activo</label>
+                            <select class="form-select" id="isactive" name="isactive" required>
+                                <option value="{{servicio.isactive}}" selected  style="color: gray;">{{servicio.isactive}}</option>
+                                <option value="active">Sí</option>
+                                <option value="inactive">No</option>
+                            </select>
+                        </div>
+                        <div class="input-group mt-2">
+                            <label for="price" class="input-group-text">Precio</label>
+                            <input type="number" class="form-control" id="price" name="price" step="0.01" min="0" value="{{servicio.price}}" required>
+                        </div>
+                        <div class="input-group mt-2">
+                            <label for="modality" class="input-group-text">Modalidad</label>
+                            <select class="form-select" id="modality" name="modality" required>
+                                <option value="{{servicio.modality}}" selected  style="color: gray;">{{servicio.modality}}</option>
+                                <option value="Presencial">Presencial</option>
+                                <option value="Virtual">Virtual</option>
+                            </select>
+                        </div>
+                        <div class="input-group mt-2">
+                            <label for="content" class="input-group-text">Contenido</label>
+                            <textarea class="form-control" id="content" name="content" rows="1" value required>{{servicio.content}}</textarea>
+                        </div>
+                        <div class="input-group mt-2">
+                            <label for="introduction" class="input-group-text">Introducción</label>
+                            <textarea class="form-control" id="introduction" name="introduction" rows="1" required>{{servicio.introduction}}</textarea>
+                        </div>
+                        <div class="input-group mt-2">
+                            <label class="input-group-text">Días disponibles</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Monday" id="monday" name="available_days" {{#if days.monday}}checked{{/if}}>
+                            <label class="form-check-label" for="monday">Lunes</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Tuesday" id="tuesday" name="available_days" {{#if days.tuesday}}checked{{/if}}>
+                            <label class="form-check-label" for="tuesday">Martes</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Wednesday" id="wednesday" name="available_days" {{#if days.wednesday}}checked{{/if}}>
+                            <label class="form-check-label" for="wednesday">Miércoles</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Thursday" id="thursday" name="available_days" {{#if days.thursday}}checked{{/if}}>
+                            <label class="form-check-label" for="thursday">Jueves</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Friday" id="friday" name="available_days" {{#if days.friday}}checked{{/if}}>
+                            <label class="form-check-label" for="friday">Viernes</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Saturday" id="saturday" name="available_days" {{#if days.saturday}}checked{{/if}}>
+                            <label class="form-check-label" for="saturday">Sábado</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Sunday" id="sunday" name="available_days" {{#if days.sunday}}checked{{/if}}>
+                            <label class="form-check-label" for="sunday">Domingo</label>
+                        </div>
+
+                        <div class="input-group mt-2">
+                            <label for="schedule_description" class="input-group-text">Horario</label>
+                            <input type="text" class="form-control" id="schedule_description" name="schedule_description" placeholder="Ej: 9:00 AM - 5:00 PM" value="{{servicio.schedule_description}}" required>
+                        </div>
+                        <div class="form-group mt-4 d-grid gap-2">
+                            <button class="btn btn-success">Actualizar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

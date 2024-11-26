@@ -1,0 +1,51 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h3 class="text-uppercase">EDITANDO CLIENTE</h3>
+                </div>
+                <div class="card-body">
+                    <form action="/admin/edit-client/{{client.user}}" method="post">
+                        <div class="input-group mt-2">
+                            <label for="user" class="input-group-text">Email</label>
+                            <input type="text" class="form-control" id="user" name="user" value="{{client.user}}" autofocus required>
+                        </div>
+                        <div class="input-group mt-2">
+                            <label for="name" class="input-group-text">Name</label>
+                            <input type="text" class="form-control" id="name" name="name" value="{{client.name}}" autofocus required>
+                        </div>
+                        <div class="input-group mt-2">
+                            <label for="password" class="input-group-text">Password</label>
+                            <input type="text" class="form-control" id="password" name="password" autofocus>
+                        </div>
+                        <div class="input-group mt-2">
+                            <label for="dni" class="input-group-text">DNI</label>
+                            <input type="number" class="form-control" id="dni" name="dni" value="{{client.dni}}" autofocus required>
+                        </div>
+                        <div class="input-group mt-2">
+                            <label for="genre" class="input-group-text">Genre</label>
+                            <select class="form-control" id="genre" name="genre" autocomplete="sex">
+                                <option value="{{client.genre}}" selected>{{client.genre}}</option>
+                                <option value="man">Masculino</option>
+                                <option value="women">Femenino</option>
+                                <option value="undefined">Undefined</option>
+                            </select>
+                        </div>
+                        <div class="input-group mt-2">
+                            <label for="phone" class="input-group-text">Número de contacto</label>
+                            <input class="form-control" type="tel" name="phone" id="phone" placeholder="Número de contacto" required autocomplete="tel" required minlength="10" maxlength="14" oninput="this.setCustomValidity(this.value <= 14 ? 'Numero no valido' : '')" oninvalid="this.setCustomValidity('Por favor, ingrese un número de contacto válido (sin guiones ni paréntesis)')" value="{{client.phone}}">
+                        </div>
+                        <div class="input-group mt-2">
+                            <label for="adress" class="input-group-text">Ubicación</label>
+                            <input class="form-control" type="text" name="adress" id="adress" placeholder="Ubicación" required autocomplete="address-line1" value="{{client.adress}}">
+                        </div>
+                        <div class="form-group mt-4 d-grid gap-2">
+                            <button class="btn btn-success">Actualizar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

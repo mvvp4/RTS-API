@@ -1,0 +1,55 @@
+<div class="row mx-auto d-flex w-100" style="justify-content: center;">
+    <h3 class="text-center text-uppercase p-3">Lista de Servicios</h3>
+    {{#if services}}
+        <div style="width: 100%; overflow-x: auto;">
+            <table class="text-center table-bordered" style="width: 100%; max-width: 100%; table-layout: fixed;">
+                <thead class="table-light">
+                    <tr class="text-primary-emphasis border">
+                        <th class="p-2" style="width: 5%;">Id</th>
+                        <th class="p-2" style="width: 15%;">Name</th>
+                        <th class="p-2" style="width: 10%;">IsActive?</th>
+                        <th class="p-2" style="width: 10%;">Modality</th>
+                        <th class="p-2" style="width: 10%;">Cost</th>
+                        <th class="p-2" style="width: 120px;">Introduction</th>
+                        <th class="p-2" style="width: 120px;">Content</th>
+                        <th class="p-2" style="width: 20%;">Actions</th>
+                    </tr>
+                </thead>
+                <tbody class="table-dark">
+                    {{#each services}}
+                    <tr class="bg-dark border">
+                        <td>{{id}}</td>
+                        <td>{{name}}</td>
+                        <td>{{isactive}}</td>
+                        <td>{{modality}}</td>
+                        <td>{{price}}</td>
+                        <td><div style="max-width: 100%; white-space: normal; overflow-wrap: break-word; word-break: break-word;">{{introduction}}</div></td>
+                        <td><div style="max-width: 100%; white-space: normal; overflow-wrap: break-word; word-break: break-word;">{{content}}</div></td>
+                        <td>
+                            <div class="btn-group p-2">
+                                <a href="/admin/edit-service/{{id}}" class="btn btn-outline-warning">Edit</a>
+                                <a href="/admin/delete-service/{{id}}" class="btn btn-outline-danger">Delete</a>
+                            </div>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+                <tfoot>
+                    <tr class="table-dark text-center">
+                        <td colspan="8">REGISTRO DE SERVICIOS</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    {{else}}
+        <div class="card text-center text-dark mx-auto">
+            <div class="card-header">
+                <h1>No hay servicios agregados</h1>
+            </div>
+            <div class="card-body">
+                <p>Presiona aquí para poder añadir un nuevo servicio</p>
+                <a href="/admin/new-service" class="btn btn-dark">Comenzar a registrar</a>
+            </div>
+        </div>
+    {{/if}}
+</div>

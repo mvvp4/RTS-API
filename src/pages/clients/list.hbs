@@ -1,0 +1,53 @@
+<div class="row mx-auto d-flex" style="justify-content: center;">
+        <h3 class="text-center text-uppercase p-3">Lista de Clientes</h3>
+        {{#if clients}}
+                <table class="text-center table-bordered" style="width: 80%;">
+                    <thead class="table-light">
+                        <tr class="text-primary-emphasis border">
+                            <th class="p-2">Email</th>
+                            <th class="p-2">Password</th>
+                            <th class="p-2">Name</th>
+                            <th class="p-2">DNI</th>
+                            <th class="p-2">Genre</th>
+                            <th class="p-2">Contact</th>
+                            <th class="p-2">Adress</th>
+                            <th class="p-2">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-dark">
+                        {{#each clients}} 
+                        <tr class="bg-dark border">
+                            <td>{{user}}</td>
+                            <td>{{password}}</td>
+                            <td>{{name}}</td>
+                            <td>{{dni}}</td>
+                            <td>{{genre}}</td>
+                            <td>{{phone}}</td>
+                            <td>{{adress}}</td>
+                            <td>
+                                <div class="btn-group p-2">
+                                    <a href="/admin/edit-client/{{user}}" class="btn  btn-outline-warning">Edit</a>
+                                    <a href="/admin/delete-client/{{user}}" class="btn btn-outline-danger">Delete</a>
+                                </div>
+                            </td>
+                        </tr>
+                        {{/each}} 
+                    </tbody>
+                    <tfoot>
+                        <tr class="table-dark text-dark text-center">
+                            <td colspan="8">REGISTRO DE CLIENTES</td>
+                        </tr>
+                    </tfoot>
+                </table>
+        {{else}}
+            <div class="card text-center text-dark mx-auto" style="">
+                <div class="card-header">
+                <h1>No hay Clientes registrados</h1>
+                </div>
+                <div class="card-body">
+                    <p>Espera a que haya registrados o improvisa una cuenta</p>
+                    <a href="/register" class="btn btn-dark">Comenzar a registrar</a>
+                </div>
+            </div>
+        {{/if}}
+</div>
